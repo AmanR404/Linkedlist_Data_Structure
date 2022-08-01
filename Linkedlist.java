@@ -72,48 +72,6 @@ public class Linkedlist{
         }
         while(n == 1);    
     }
-    void delete(){
-       int confirmation;
-       Scanner sc = new Scanner(System.in);
-       do{
-        if(head == null){
-            System.out.println("LL is already empty");
-        }
-        else{
-            System.out.println("Press 1 for delete at Front....Press 2 for End...Press 3 for specific location");
-            int input = sc.nextInt();
-            switch(input){
-                case 1 :
-                    Node temp = head;
-                    head = temp.next;
-                    break;
-                case 2 :
-                    Node temp1 = head;
-                    Node ptr = temp1.next;
-                    while(ptr.next != null){
-                        temp1 = ptr;
-                        ptr = ptr.next;
-                       }
-                    temp1.next = null;
-                    break;
-                case 3 :
-                    System.out.print("Enter position of node to be deleted : ");
-                    int input1 = sc.nextInt();
-                    Node temp2 = head;
-                    Node ptr1 = temp2.next;
-                    for (int i = 0; i < input1 - 2; i++){
-                        temp2 = ptr1;
-                        ptr1 = ptr1.next;  
-                    } 
-                    temp2.next = ptr1.next;
-                    break;
-            }
-        }
-        System.out.print("Do you want to delete more item. If Yes Press 1 : ");
-        confirmation = sc.nextInt();
-       }
-       while( confirmation == 1);
-    }
     void traverser(){
         Node temp = head;
         if(head == null){
